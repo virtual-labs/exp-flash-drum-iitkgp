@@ -1,13 +1,263 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<!-- Add CSS at the head of HTML file -->
-    <link rel="stylesheet" href="./css/main.css">
+  <title>Water Flow Simulation</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-		<!-- Your code goes here-->
+ 
+  <div class="img-container"><!--img container div start--> 
+					       
+	<img class="img-fluid" id="plant"  src="./images/stage.png "/>	
+	
+  
+	<img src="./images/drop.gif" class="drop" id="drop1"> <!--upper pipe drop-->
+	<img src="./images/drop.gif" class="drop" id="drop"> <!--lower pipe drop-->
+	<img src="./images/drop.gif" class="drop" id="drop2"> <!--lower pipe drop-->
 
-	<!-- Add JS at the bottom of HTML file --> 
-        <script src="./js/main.js"></script>
+	<div id="rectangle"></div>
+	<div id="rectangle2"></div>
+	<div id="rectangle3"></div>
+	
+  <!--Water tank supply-->
+	  
+	<div  id="wpipe1"></div>
+	<div  id="wpipe2"></div>
+	<div  id="wpipe3"></div>
+	
+	<div  id="wpipe6"></div>
+	<div  id="wpipe8"></div>
+	<div  id="wpipe9"></div>
+	<div  id="wpipe10"></div>
+	<div  id="wpipe11"></div>
+	<div  id="wpipe12"></div>
+	 
+	<div  id="wpipe4"></div>
+	<div  id="wpipe5"></div>
+	
+	<div  id="wpipe7"></div>
+	<!--  water chiller supply-->
+  <div  id="wpipe13"></div>
+  <div  id="wpipe14"></div>
+  <div  id="wpipe15"></div>
+  <div  id="wpipe16"></div>
+  <div  id="wpipe17"></div>
+  <div  id="wpipe18"></div>
+  <div  id="wpipe19"></div>
+  <div  id="wpipe20"></div>
+  <div  id="wpipe21"></div>
+  <div  id="wpipe22"></div>
+  <div  id="wpipe23"></div>  
+ 
+  
+  
+  
+  
+  <img src="./images/water_bubble.gif" class="basin" id="basin">
+  <img src="./images/water_bubble.gif" class="basin2" id="basin2"> 
+  <img src="./images/water_bubble.gif" class="basin3" id="basin3">	
+  <img src="./images/smoke02.gif" class="vapor" id="vapor">
+	 
+  
+ 
+   
+   
+	<!--<button onclick="moveUp();tankflow()" class="button" ><img src="./images/knob1.png"></button> -->
+   <!--<button onclick="uflow();moveUp()" id="knob1" class="gbutton" ><img src="./images/knob1.png"></button> -->
+   
+<!-- <button onclick="tankflow();moveUp2();moveUp3(); " class="button" ><img src="./images/knob1.png"></button> -->
+  <button onclick="tankflow();moveUp2();moveUp3(); uflow();moveUp()" class="gbutton" ><img src="./images/knob1.png"></button> 
+  
+  
+  
+  
+   <div class="adia"><!--Adiabatic Flash Calculator--> 
+   <h1>Adiabatic Flash</h1>
+	<form id="input-form">
+		<label for="temperature">Temperature (K):</label>
+		<input type="number" id="temperature" required><br>
+
+		<label for="pressure">Pressure (bar):</label>
+		<input type="number" id="pressure" required><br>
+
+		<label for="composition">Composition:</label>
+		<input type="text" id="composition" placeholder="e.g. 0.5,0.5" required><br>
+
+		<label for="z">Overall Mole Fraction:</label>
+		<input type="number" id="z" placeholder="e.g. 1.0" required><br>
+
+		<button type="submit">Calculate</button>
+	</form>
+
+	<div id="output"></div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/9.4.4/math.min.js"></script>
+	<script>
+		const input_form = document.getElementById("input-form");
+		input_form.addEventListener("submit", performAdiabaticFlashCalculation);
+
+		function performAdiabaticFlashCalculation(event) {
+			event.preventDefault();
+
+			// Get input values
+			const temperature = parseFloat(document.getElementById("temperature").value);
+			const pressure = parseFloat(document.getElementById("pressure").value);
+			const composition = document.getElementById("composition").value.split(",").map(x => parseFloat(x));
+			const z = parseFloat(document.getElementById("z").value);
+
+			// Normalize composition
+			const sum_xi = math.sum(composition);
+			for (let i = 0; i < composition.length; i++) {
+				composition[i] /= sum_xi;
+			}
+
+			// Calculate Ki values
+			let Ki = [];
+			for (let i = 0; i < composition.length; i++) {
+				Ki.push(math.exp(-Math.log(composition[i]) + Math.log(sum_xi)));
+			}
+
+			// Calculate the denominator
+			const denominator = math.sum(math.dotMultiply(composition, Ki));
+
+			// Calculate vapor and liquid phase compositions
+			let x = [];
+			let y = [];
+			for (let i = 0; i < composition.length; i++) {
+				x.push(composition[i] / denominator);
+				y.push(Ki[i] * composition[i] / denominator);
+			}
+
+			// Calculate the vapor and liquid phase mole fractions
+			const vapour_mole_fraction = math.sum(y);
+			const liquid_mole_fraction = z - vapour_mole_fraction;
+
+			// Calculate the vapor and liquid phase compositions (in mol fraction)
+			for (let i = 0; i < composition.length; i++) {
+				x[i] *= liquid_mole_fraction;
+				y[i] *= vapour_mole_fraction;
+			}
+
+			// Calculate the vapor and liquid phase pressures
+			const vapor_pressure = vapour_mole_fraction * pressure;
+			const liquid_pressure = (1 - vapour_mole_fraction) * pressure;
+
+			// Calculate the enthalpy of the feed
+			const enthalpy = 0; // Replace this with your own calculation
+
+			// Calculate the enthalpies of the vapor and liquid phases
+			const hv = 0; // Replace this with your own calculation
+			const hl = 0; // Replace this with your own calculation
+
+			// Calculate the adiabatic flash temperature
+					const Cp = 50.0; // Replace this with the heat capacity of the mixture
+		const Tad = (enthalpy - hv + hl) / (Cp * (vapour_mole_fraction - liquid_mole_fraction));
+
+		// Display the results
+		const output_div = document.getElementById("output");
+		output_div.innerHTML = `
+			<p>Vapor Phase Composition: ${y.map(x => x.toFixed(3))}</p>
+			<p>Liquid Phase Composition: ${x.map(x => x.toFixed(3))}</p>
+			<p>Vapor Pressure: ${vapor_pressure.toFixed(2)} bar</p>
+			<p>Liquid Pressure: ${liquid_pressure.toFixed(2)} bar</p>
+			<p>Adiabatic Flash Temperature: ${Tad.toFixed(2)} K</p>
+		`;
+	}
+</script>
+     </div> <br> 
+
+ 
+<div class="isothermal"><!--Adiabatic Flash Calculator--> 
+<h1>Isothermal Flash</h1>
+	<form id="input-form1">
+		<label for="temperature">Temperature (K):</label>
+		<input type="number" id="temperature1" required><br>
+
+		<label for="pressure">Pressure (bar):</label>
+		<input type="number" id="pressure1" required><br>
+
+		<label for="composition">Composition:</label>
+		<input type="text" id="composition1" placeholder="e.g. 0.5,0.5" required><br>
+
+		<button type="submit">Calculate</button>
+	</form>
+
+	<div id="output1"></div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/9.4.4/math.min.js"></script>
+	<script>
+		const input_form1 = document.getElementById("input-form1");
+		input_form1.addEventListener("submit", performIsothermalFlashCalculation);
+
+		function performIsothermalFlashCalculation(event) {
+			event.preventDefault();
+
+			// Get input values
+			const temperature1 = parseFloat(document.getElementById("temperature1").value);
+			const pressure1 = parseFloat(document.getElementById("pressure1").value);
+			const composition1 = document.getElementById("composition1").value.split(",").map(x => parseFloat(x));
+
+			// Normalize composition
+			const sum_xi = math.sum(composition1);
+			for (let i = 0; i < composition1.length; i++) {
+				composition1[i] /= sum_xi;
+			}
+			
+			// Calculate Ki values
+			let Ki = [];
+			for (let i = 0; i < composition1.length; i++) {
+				Ki.push(math.exp(-Math.log(composition1[i]) + Math.log(sum_xi)));
+			}
+
+			// Calculate the denominator
+			const denominator = math.sum(math.dotMultiply(composition1, Ki));
+
+			// Calculate vapor and liquid phase compositions
+			let x = [];
+			let y = [];
+			for (let i = 0; i < composition1.length; i++) {
+				x.push(composition1[i] / denominator);
+				y.push(Ki[i] * composition1[i] / denominator);
+			}
+
+			// Calculate the vapor and liquid phase mole fractions
+			const z = math.sum(composition1);
+			const vapour_mole_fraction1 = math.sum(y);
+			const liquid_mole_fraction1 = math.sum(x);
+
+			// Calculate the vapor and liquid phase compositions (in mol fraction)
+			for (let i = 0; i < composition1.length; i++) {
+				x[i] /= liquid_mole_fraction1;
+				y[i] /= vapour_mole_fraction1;
+			}
+
+			// Calculate the vapor and liquid phase pressures
+			const vapor_pressure1 = vapour_mole_fraction1 * pressure1;
+			const liquid_pressure1 = (1 - vapour_mole_fraction1) * pressure1;
+
+			// Display the results
+			const output_div1 = document.getElementById("output1");
+			output_div1.innerHTML = `
+				<p>Composition (mol fraction):......</p>
+				<p>Feed: ${composition1.map(x => x.toFixed(3)).join(", ")}</p>
+				<p>Vapor: ${y.map(x => x.toFixed(3)).join(", ")}</p>
+				<p>Liquid: ${x.map(x => x.toFixed(3)).join(", ")}</p>
+				<p>Mole Fractions:..........</p>
+				<p>Feed: ${composition1.map(x => (x * z).toFixed(3)).join(", ")}</p>
+				<p>Vapor: ${y.map(x => (x * vapour_mole_fraction1 * z).toFixed(3)).join(", ")}</p>
+				<p>Liquid: ${x.map(x => (x * liquid_mole_fraction1 * z).toFixed(3)).join(", ")}</p>
+				<p>Pressure:.........</p>
+				<p id="Vapor_if">Vapor: ${vapor_pressure1.toFixed(2)} bar</p>
+				<p id="Liquid_if">Liquid: ${liquid_pressure1.toFixed(2)} bar</p>
+			`;
+		}
+		
+	</script>
+
+</div>
+  
+  </div>
+  
+  <script src="script.js"></script>
 </body>
 </html>
