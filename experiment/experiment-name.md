@@ -1,1 +1,1 @@
-## Experiment name
+## Flush Drum &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <img src="images/iitkgp.png" width="3%" />
