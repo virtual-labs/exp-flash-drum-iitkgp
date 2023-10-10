@@ -1,4 +1,6 @@
 ## Aim of experiment
 
-- The objective of Part 1 of the experiment is to fully understand the functionality of active low 3 line to 8 line Decoder using 74138 IC and to show how according to select inputs and three enable inputs the active low outputs(Y0 toY7) will be enabled or disabled.
-- The objective of Part 2 of the experiment is to understand the functionality of an active 4-to-16 active low decoder implemented by cascading two 74138 ICs.
+ <div class="content" id="experiment-article-section-1-content">
+                            <p style="text-align:left; font-size:18px; font-weight:bold;">Flash Distillation</p><br>
+			    <p style="text-align:left; font-size:18px; font-weight:bold;">Introduction</p>
+                            <p style="padding-bottom: 10px;">Distillation is a unit operation or a physical separation process of separate more volatile components from a mixture by partial vaporisation of the liquid mixture followed by condensation. The distribution of the components in the two phases is governed by the vapour liquid equilibrium relationship.<br>The most elementary form of simple distillation is Flash Distillation, in which a feed mixture is partially vaporized to produce vapour which is enriched with more volatile components and a liquid that is devoid of volatile components. The vapour and liquid streams leaving the drum are in equilibrium. This operation is called equilibrium flash vaporisation or flash distillation.</p>
