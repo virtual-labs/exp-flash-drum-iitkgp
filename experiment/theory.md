@@ -48,8 +48,9 @@ The partial vaporisation of a multicomponent feed mixture is commonly conducted 
  Equilibrium relationship</b>
  <br/>
  `y_(Fi)=K_(Fi)x_(Fi)` ( i= 1,2,.....C)<br>
-`sum_(i=1)^c y_(Fi)=1`<br>
-`sum_(i=1)^c x_(Fi)=1`
+$$\sum_{i=1}^c{ y_{Fi}}=1$$
+
+$$\sum_{i=1}^c{ x_{Fi}}=1$$
 </p>
  <p style="padding-bottom: 10px;">
 Material balances:<br>
