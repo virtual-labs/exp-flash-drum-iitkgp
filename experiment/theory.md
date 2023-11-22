@@ -47,23 +47,27 @@ The partial vaporisation of a multicomponent feed mixture is commonly conducted 
 <p style="padding-bottom: 8px;"><b>
  Equilibrium relationship</b>
  <br/>
- $y_{Fi}=K_{Fi}x_{Fi} ( i= 1,2,.....C)$$<br>
+ $$y_{Fi}=K_{Fi}x_{Fi} ( i= 1,2,.....C)$$<br>
 $$\sum_{i=1}^c{ y_{Fi}}=1$$
 
 $$\sum_{i=1}^c{ x_{Fi}}=1$$
 </p>
  <p style="padding-bottom: 10px;">
 Material balances:<br>
-$$FZ_{Fi} = V_Fy_{Fi} + L_{F}x_{Fi}$$<br>
-Where,`K_(Fi)` represents the equilibrium coefficient of component i, `y_Fi` and `x_Fi` are the composition of component i in the produced vapour and liquid streams.<br><br>
-`Z_(Fi)` the feed composition of component i, `L_F` and `V_F` the flow rates of liquid and vapour streams. Equation 13 can be extended to:<br>
-$$Fsum_(i=1)^c Z_{Fi}=V_Fsum_(i=1)^c y_{Fi}+L_Fsum_(i=1)^c x_{Fi}$$<br><br>
+$$FZ_{Fi} = V_Fy_{Fi} + L_{F}x_{Fi}$$
+  
+$$Where,K_{Fi} \ represents \ the \ equilibrium \ coefficient \ of \ component \ i, y_Fi and x_Fi \ are \ the \ composition \ of \ component \ i \ in \ the \ produced \ vapour \ and \ liquid  treams.$$
+  
+$$Z_(Fi) \ the \ feed \ composition \ of \ component \ i, L_F \ and V_F \ the \ flow \ rates \ of \ liquid \ and \ vapour \ streams. \ Equation \ 13 \ can \ be \ extended \ to:$$
+
+$$F\sum_{i=1}^c Z_{Fi}=V_F \sum_{i=1}^c y_{Fi}+L_F \sum_{i=1}^c x_{Fi}$$<br>
 $$F=V_F+L_F$$<br><br>
-$$x_{Fi}=Z_{Fi}/(L_F/F+V_FK_{Fi}/F)$$<br><br>
-$$x_{Fi}=Z_{Fi}/((1-V_F/F)+V_FK_{Fi}/F)$$<br><br>
-$$x_{Fi}=Z_{Fi}/(1-theta(1-K_{Fi}))$$ &nbsp Where `theta=V_F/F`<br><br>
+$$x_{Fi}=\frac{Z_{Fi}}{\frac{L_F}{F}+V_F \frac{K_{Fi}}{F}}$$<br><br>
+$$x_{Fi}=\frac{Z_{Fi}}{(1- \frac{V_F}{F})+V_F \frac{K_{Fi}}{F}}$$<br><br>
+
+$$x_{Fi}=\frac{Z_{Fi}}{1-\theta(1-K_{Fi})}  \ Where \ \theta=\frac{V_F}{F}$$
 Now, we consider,<br><br>
-$$f(theta)=sum_(i=1)^cZ_{Fi}/[[1-theta(1-K_{Fi})]]-1$$<br><br>
+$$f(\theta)=\sum_{i=1}^c \frac {Z_{Fi}}{[1-\theta(1-K_{Fi})]}-1$$<br><br>
 Positive value of θ means the vaporisation occurs, whereas zero value indicatesno vaporisation.
 </p>
  </div>
