@@ -13,8 +13,9 @@ Introduction
 <p style="padding-bottom: 10px;"><b>RAOULT'S LAW -</b> Raoult's law describes the vapour liquid equilibrium of ideal solution. For an ideal solution the partial pressure of a component is equal to the product of itsmole fraction in the liquid phase and its vapour pressure at the prevailing conditions. It can be written as</p>
 <p style="padding-bottom: 10px;">$$P_A* = x_AP_A$$
 <br>$$P_B** = x_BP_B$$
-<br>`where,`
-<br>$$P_A*, P_B*= \ Partial \ pressure \ of \ component \ A \ and \ B
+where,
+ 
+<br>$$P_A*, P_B*= \ Partial \ pressure \ of \ component \ A \ and \ B$$
 <br>$$x_A, x_B = \ Mole \ fraction \ of \ component \ A \ and \ B \ in \ the \ liquid \ phase$$
 <br>$$P_A, P_B = \ Vapour \ pressures \ of \ component \ A \ and \ B \ at \ system \ temperature$$
 <br>Also,
@@ -24,12 +25,11 @@ Introduction
 <br>P = Total pressure</p>
  <p style="padding-bottom: 10px;">According to Dalton's law the total pressure is equal to the sum of the partial pressures. Therefore,</p>
 <p style="padding-bottom: 10px;">
- $$P =P_A*+P_B*$$
-<br>= $$x_AP_A+x_BP_B$$
+ $$P =P_A*+P_B* = x_AP_A+x_BP_B$$
 </p>
  <p style="padding-bottom: 10px;">The vapour pressure of pure components can be obtained either from charts or the use of equation. Antoine equation given below is widely used for this. This is given below</p>
 <p style="padding-bottom: 10px;">$$In \ P_i= A_i - B_i/ C_i + T$$
-<br>Where `A_i, B_i and C_i` are constant for component i.</p>
+<br>$$Where \ A_i, B_i and C_i \ are \ constant \ for \ component i.$$</p>
 <p style="padding-bottom: 10px;"><b>RELATIVE VOLATILITY :</b> Relative volatility is the concentration ratio of A to B in the vapour phase divided by the same ratio in the liquid phase. Relative volatility is usually denoted as α. For binary mixture<br><br>
 α = y/(1-y) / x(1-x)<br><br>
 $$P_A/ P_B \ (Ratio \ of \ vapour \ pressure \ of \ A \ and \ B)$$<br><br>
