@@ -2,12 +2,12 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "This is a Sample Question 1?",
+      "question": "Express the flash vaporization",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "Single stage operation",
+        "b": "Multi component operation",
+        "c": "Still operation",
+        "d": "None of the mentioned"
       },
       "explanations": {
         "a": "Explanation 1  <a href='www.google.com'>here</a>",
@@ -19,12 +19,63 @@
       "difficulty": "beginner"
     },
     {
-      "question": "This is a Sample Question 2?",
+      "question": "Find the heat given( in KJ) to the feed for the flash vaporization process if the ratio of residue to the distillate is 0.65 and the enthalpy of feed, distillate and the residue are 500, 800 and 200 KJ/kmol respectively. The feed rate is 100 kmol/hr.",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "4343",
+        "b": "5353",
+        "c": "6363",
+        "d": "7373"
+      },
+      "explanations": {
+        "a": "Explanation 1  <a href='www.google.com'>here</a>",
+        "b": "Explanation 2",
+        "c": "Explanation 2",
+        "d": "Explanation 2"
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Find the distillate and the residue rates in mole/hr, if the feed rate is 100 mol/hr; The compositions of feed, distillate and residue in terms of mole fraction are 0.65, 0.9 and 0.2.",
+      "answers": {
+        "a": "36,64",
+        "b": "64,36",
+        "c": "20,80",
+        "d": "80,20"
+      },
+      "explanations": {
+        "a": "Explanation 1  <a href='www.google.com'>here</a>",
+        "b": "Explanation 2",
+        "c": "Explanation 2",
+        "d": "Explanation 2"
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Which of the following randomization during mixing unit operation?",
+      "answers": {
+        "a": "Dissimilar charges",
+        "b": "Dissimilar particles",
+        "c": "Dissimilar ions",
+        "d": "Dissimilar forces"
+      },
+      "explanations": {
+        "a": "Explanation 1  <a href='www.google.com'>here</a>",
+        "b": "Explanation 2",
+        "c": "Explanation 2",
+        "d": "Explanation 2"
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Solid mixing does NOT differ from liquid mixing in one of the following ways.",
+      "answers": {
+        "a": "Flow currents are not possibles",
+        "b": "Large sample is required for analysis",
+        "c": "Homogeneity of components",
+        "d": "Mixing requires high power"
       },
       "explanations": {
         "a": "Explanation 1  <a href='www.google.com'>here</a>",

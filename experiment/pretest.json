@@ -2,12 +2,12 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "This is a Sample Question 1?",
+      "question": "Flash vaporization is a",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "Equilibrium distillation",
+        "b": "Differential distillation",
+        "c": "Simple distillation",
+        "d": "None of the mentioned"
       },
       "explanations": {
         "a": "Explanation 1  <a href='www.google.com'>here</a>",
@@ -19,12 +19,12 @@
       "difficulty": "beginner"
     },
     {
-      "question": "This is a Sample Question 2?",
+      "question": "Binary mixture of 100 kmol/hr enters into a flash drum has equimolar composition. The distillate obtained is 60 kmol/hr and the enthalpy of distillate, residue and feed are 500 KJ/kmol, 200 KJ/kmol and 400 KJ/kmol. Find the bottom flow rate in kmol/hr.",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "10",
+        "b": "20",
+        "c": "30",
+        "d": "40"
       },
       "explanations": {
         "a": "Explanation 1  <a href='www.google.com'>here</a>",
@@ -33,6 +33,57 @@
         "d": "Explanation 2"
       },
       "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Find the ratio of distillate to residual flow rates, if a binary mixture containing 65% of more volatile component while the distillate and the residue compositions are 90% and 30%",
+      "answers": {
+        "a": "0.4",
+        "b": "1.4",
+        "c": "2.4",
+        "d": "3.4"
+      },
+      "explanations": {
+        "a": "Explanation 1  <a href='www.google.com'>here</a>",
+        "b": "Explanation 2",
+        "c": "Explanation 2",
+        "d": "Explanation 2"
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "What happens to the liquid after preheating when enter to the cyclonic flash drum?",
+      "answers": {
+        "a": "Starts to evaporate",
+        "b": "Split with centrifugal force",
+        "c": "Comes out in residue",
+        "d": "None of the mentioned"
+      },
+      "explanations": {
+        "a": "Explanation 1  <a href='www.google.com'>here</a>",
+        "b": "Explanation 2",
+        "c": "Explanation 2",
+        "d": "Explanation 2"
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "In dispensing, which one of the following terms is NOT used for mixing?",
+      "answers": {
+        "a": "Sizing",
+        "b": "Trituration",
+        "c": "Spatulation",
+        "d": "Tumbling"
+      },
+      "explanations": {
+        "a": "Explanation 1  <a href='www.google.com'>here</a>",
+        "b": "Explanation 2",
+        "c": "Explanation 2",
+        "d": "Explanation 2"
+      },
+      "correctAnswer": "a",
       "difficulty": "beginner"
     }
   ]
